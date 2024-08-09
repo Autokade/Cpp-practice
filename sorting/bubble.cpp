@@ -19,7 +19,7 @@ void bubble_sort(int arr[], int n)
         {
             break;
         }
-        cout << "runs\n"
+        cout << "runs\n";
     }
 }
 
