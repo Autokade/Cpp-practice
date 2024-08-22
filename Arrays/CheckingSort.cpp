@@ -6,7 +6,7 @@ int isSorted(int n, vector<int> a)
     for (int i = 1; i < n; i++)
     {
         /* code */
-        if (a[i] >> a[i - 1])
+        if (a[i] > a[i - 1])
         {
             return true;
         }
