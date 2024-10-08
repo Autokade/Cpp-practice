@@ -43,7 +43,7 @@ class SinglyLinkedList {
         while(head != nullptr && head->data == key){
             Node* temp = head;
             head = head->next;
-            delete temp;l
+            delete temp;
         }
         Node* current = head;
         while(current!=nullptr & current->next != nullptr){
