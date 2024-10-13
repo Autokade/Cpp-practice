@@ -45,6 +45,50 @@ public:
         }
         cout << "NULL\n";
     }
+    void deleteNode(int value){
+        if(head == nullptr){
+            return;
+        }
+        Node* temp = head;
+
+        while(temp != nullptr && temp->data != value){
+            temp = temp-> next;
+        } 
+
+        if(temp != nullptr){
+            if(temp == head){
+                head = temp->next;
+                if (head != nullptr)
+                {
+                    head -> prev = nullptr;
+                }
+                else if(temp == tail){
+                    tail = temp ->prev;
+                    tail -> next = nullptr;
+                }
+                else{
+                    temp->prev->next = temp->next;
+                }
+                
+            }
+            delete temp;
+        }
+        else{
+            cout << "Node with value not found" << endl;
+        }
+
+    }
+
+    bool search(int value){
+        Node* current = head;
+        while(current != nullptr ){
+            if(current -> data = value ){
+                return true;
+            }
+            current = current -> next;
+        }
+        return false;
+    }
 };
 
 int main() {
