@@ -18,7 +18,7 @@ public:
     ~Tree();
     void CreateTree();
     void Preorder(Node* p);
-    void Preorder() { Preorder(root); }  // Passing Private Parameter in Constructor
+    void Preorder() { Preorder(root); }  
     void Inorder(Node* p);
     void Inorder() { Inorder(root); }
     void Postorder(Node* p);
@@ -34,7 +34,6 @@ Tree::Tree() {
 }
  
 Tree::~Tree() {
-    // TODO
 }
  
 void Tree::CreateTree() {
