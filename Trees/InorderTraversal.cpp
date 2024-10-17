@@ -16,7 +16,7 @@ void inorder(Node* root, vector<int> &arr){
     }
     
     inorder(root->left,arr);
-    arr.push_back(root->data)
+    arr.push_back(root->data);
     inorder(root->right,arr);
 }
 
