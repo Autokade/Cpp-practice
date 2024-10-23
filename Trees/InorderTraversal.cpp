@@ -39,7 +39,7 @@ int main(){
 
     for(int val : result){
         cout << val << "";
-    }
+    }i
     cout << endl;
     return 0; 
 }
