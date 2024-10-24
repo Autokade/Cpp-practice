@@ -38,7 +38,7 @@ int main(){
     cout << "Inorder traversal : ";
 
     for(int val : result){
-        cout << val << "";i
+        cout << val << "";
     }
     cout << endl;
     return 0; 
