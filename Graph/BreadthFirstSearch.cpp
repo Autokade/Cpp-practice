@@ -23,7 +23,7 @@ void BFS(int vtx, int A[][8], int n)
                 visited[v] = 1;
                 Q.emplace(v);
             }
-        }
+        }i
     }
     cout << endl;
 }
