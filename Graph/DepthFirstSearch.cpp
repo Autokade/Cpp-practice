@@ -78,7 +78,7 @@ int main (){
  
     cout << "dfs Vertex: " << u << " -> " << flush;
     dfs(u, A, 8);
-    cout << endl;i
+    cout << endl;
  
     return 0;
 }
