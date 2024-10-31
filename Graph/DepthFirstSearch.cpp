@@ -80,5 +80,5 @@ int main (){
     dfs(u, A, 8);
     cout << endl;
  
-    return 0;c
+    return 0;
 }
