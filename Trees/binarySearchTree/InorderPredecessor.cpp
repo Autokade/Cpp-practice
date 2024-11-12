@@ -53,4 +53,4 @@ int main() {
 
     Node* predecessor = findInorderPredecessor(root, root->left->right); // Node with data 15
     cout << "Predecessor of 15: " << (predecessor ? predecessor->data : -1) << endl;
-}
+}c
