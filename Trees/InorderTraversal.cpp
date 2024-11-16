@@ -24,7 +24,7 @@ vector<int> inOrder(Node* root){
     vector<int> arr;
     inorder(root, arr);
     return arr;
-}
+}c
 
 int main(){
     Node* root = new Node(1);
