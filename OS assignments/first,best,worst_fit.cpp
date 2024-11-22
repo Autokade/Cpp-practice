@@ -115,3 +115,27 @@ void worstFit(vector<int> memory, vector<int> processes)
         }
     }
 }
+
+int main()
+{
+    vector<int> memory = {100, 500, 200, 300, 600};
+    vector<int> processes = {212, 417, 112, 426};
+
+    cout << "Memory Blocks: \n";
+    for (int i = 0; i < memory.size(); i++)
+    {
+        cout << "Block " << i + 1 << ": " << memory[i] << " KB\n";
+    }
+
+    cout << "\nProcesses: \n";
+
+    for (int i = 0; i < processes.size(); i++)
+    {
+        cout << "Process " << i+1 << ": "<< processes[i] << " KB\n"; 
+    }
+    firstFit(memory, processes);
+    bestFit(memory, processes);
+    worstFit(memory, processes);
+    return 0;
+    
+}
