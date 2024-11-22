@@ -31,3 +31,39 @@ void firstFit(vector<int> memory, vector<int> processes){
         }
     }
 }
+
+void bestFit(vector<int> memory, vector<int> processes){
+    cout << "\n Best Fit Allocation: \n";
+
+    vector<int> allocation(processes.size(),-1);
+
+    for (int i = 0; i < processes.size(); i++)
+    {
+        int bestIdx = -1;
+        for(int j = 0; j < memory.size(); j++){
+            if(memory[j] >= processes[i]){
+                if(bestIdx == -1 || memory[j] < memory[bestIdx]){
+                    bestIdx = j;
+                }
+            }
+
+            if(bestIdx != -1){
+                allocation[i] = bestIdx;
+                memory[bestIdx] -= processes[i];
+            }
+        }
+
+        for(int i = 0; i< processes.size(); i++){
+            cout << "Process " <<i+1 << " (" << processes[i] << "KB) -> ";
+            if (allocation[i] != -1)
+            {
+                cout << "Block " << allocation[i] + 1 << endl;
+            }
+            else{
+                cout << "Not Allocated\n";
+            }
+            
+        }
+    }
+    
+}
