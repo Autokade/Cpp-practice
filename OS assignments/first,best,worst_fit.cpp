@@ -63,6 +63,7 @@ void bestFit(vector<int> memory, vector<int> processes)
             }
         }
 
+    }
         for (int i = 0; i < processes.size(); i++)
         {
             cout << "Process " << i + 1 << " (" << processes[i] << "KB) -> ";
@@ -75,7 +76,6 @@ void bestFit(vector<int> memory, vector<int> processes)
                 cout << "Not Allocated\n";
             }
         }
-    }
 }
 
 void worstFit(vector<int> memory, vector<int> processes)
