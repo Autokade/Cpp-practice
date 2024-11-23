@@ -79,11 +79,11 @@ int main(){
     insert(list1, 2);
     insert(list1, 1);
 
-    insert(list1, 8);
-    insert(list1, 7);
-    insert(list1, 6);
-    insert(list1, 5);
-    insert(list1, 4);
+    insert(list2, 8);
+    insert(list2, 7);
+    insert(list2, 6);
+    insert(list2, 5);
+    insert(list2, 4);
 
     cout <<"First List: ";
     printList(list1);
