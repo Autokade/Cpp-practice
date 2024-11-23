@@ -21,7 +21,7 @@ void* producer(void* arg){
         buffer.push(item);
         cout << "Produced: " << item << endl;
         pthread_mutex_unlock(&mutex);
-        sem_post(&full);
+        sem_post(&full);c
         sleep(1);
     }
 }
