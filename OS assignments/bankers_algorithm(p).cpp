@@ -41,7 +41,7 @@ void isSafe(vector<int> &processes, vector<int> &avail, vector<vector<int>> &max
         }
         if (!found) {
             cout << "System is not in a safe state.\n";
-
+    
         }
         count++;
     }
