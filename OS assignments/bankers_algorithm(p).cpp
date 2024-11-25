@@ -44,7 +44,7 @@ void isSafe(vector<int> &processes, vector<int> &avail, vector<vector<int>> &max
     
         }
         count++;
-    }
+    }s
 
     cout << "System is in a safe state.\nSafe Sequence is: ";
     for (int i = 0; i < safeSeq.size(); i++) {
