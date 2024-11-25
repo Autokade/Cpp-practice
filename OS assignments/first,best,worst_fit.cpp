@@ -138,4 +138,4 @@ int main()
     worstFit(memory, processes);
     return 0;
     
-}c
+}
