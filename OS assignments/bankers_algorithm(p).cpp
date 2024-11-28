@@ -51,7 +51,7 @@ void isSafe(vector<int> &processes, vector<int> &avail, vector<vector<int>> &max
         cout << "P" << safeSeq[i];
         if (i != safeSeq.size() - 1) {
             cout << " -> ";
-        } else {c
+        } else {
             cout << "\n";
         }
     }
