@@ -142,3 +142,147 @@ for k=1:N
     end
 end
 x
+
+%Lagrange
+clc;
+clear all;
+p1 = 1.3;
+t = linspace(0 , 2*pi , 8)%0-2pi divied in 8 parts
+y = @(x) sin(x).^2 ;
+o = y(t)
+n = length(t);
+for i = 1:n
+    l(i) = 1;
+    for j = 1:n
+        if j ~= i
+            l(i) = ((p1 - t(j))/(t(i) - t(j))) * l(i);
+            %x-x1/x0-x1
+        end
+    end
+end
+sum1 = 0;
+for i = 1:n
+    %   *yi
+    sum1 = sum1 + l(i) * o(i);
+end
+
+
+disp(sum1);
+
+
+%least square method
+
+clc;
+clear all;
+
+sum1 = 0;
+sum2 = 0;
+sum3 = 0;
+sum4 = 0;
+x = [-2,-1,0,1,2];
+y = [15,1,1,3,19];
+n = 5;
+%calculating $xi $yi $xiyi %xi^2
+for i = 1 : n
+    sum1 = sum1 + x(i);
+    sum2 = sum2 + y(i);
+    sum3 = sum3 + (x(i)*y(i));
+    sum4 = sum4 + (x(i)*x(i));
+end
+syms a
+syms b
+x=[a,b];
+A = [n,sum1;
+    sum1,sum4]
+B = [sum2;sum3];
+x = inv(A)*(B);
+disp(x);
+
+
+%Newton divided difference
+
+clc;
+clear all;
+f = @(x) exp(x);
+x = [1,1.5,2,2.5];
+n = 4;
+y = [2.7183,4.4817,7.3891,12.1825];
+%intialize dd with y in first column
+for k=1:n
+    dd(k,1)=y(k);
+end
+for j = 2:n%filling column 2 to last
+    for i = j:n
+        dd(i,j) = (dd(i,j-1)-dd(i-1,j-1))/(x(i)-x(i-j+1));
+        %filling the rows
+    end
+end
+disp(dd);
+P=2.25
+sum = 0;
+for i = 1:n
+    prod(i) = 1;
+    for j = 1:i-1
+        prod(i) = prod(i) * (P- x(j));
+        %1  , (x-x0)  , (x-x0)(x-x1).....
+    end
+    sum = sum + (dd(i,i) * prod(i));
+    %a0*   ,a1*   ,a2*.....
+end
+disp(sum);
+disp(f(2.25));
+disp(abs(sum - f(2.25)));
+
+%power difference
+clc;
+clear all;
+x0 = [1;1;0;1];
+A = [1,1,0,0;1,2,0,1;0,0,3,3;0,1,2,3];
+k0 = 0;
+e = 0.001;
+N = 10000;
+t = 0;
+while t <= N
+    %multiply matrix with base
+    y = A * x0;
+    %take the max elemnt common
+    k = max(abs(y));
+    x0 = y / k;
+    %stopping condition
+    if abs(k0 - k) < e
+        break;
+    end
+    k0 = k;
+    t = t + 1;
+end
+disp('No of iteration required is: ');
+disp(t);
+disp('Eigen value is: ');
+disp(k);
+disp('Eigen vector is: ');
+disp(x0);
+
+%trap and simpson
+clc;
+clear all;
+f = @(x) (exp(-x*x)*cos(x));
+a = input('Enter the lower limit: ');
+b = input('Enter the upper limit: ');
+n = input('Enter number of intervals: ');
+h = ((b-a)/n);
+sum = 0;
+for i = 1:n-1
+    sum = sum + 2* f(a+i*h);
+end
+trap = (h/2)*(f(a)+f(b)+sum);
+disp(trap);
+
+sum1 = 0;
+for i = 1:n-1
+   if rem(i,2)==0
+       sum1=sum1+2*f(a+i*h)
+   else
+       sum1=sum1+4*f(a+i*h)
+end
+simpson = (h/3)*(f(a)+sum1+f(b));
+disp(simpson);
