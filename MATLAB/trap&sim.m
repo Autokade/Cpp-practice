@@ -19,5 +19,5 @@ for i = 1:n-1
    else
        sum1=sum1+4*f(a+i*h)
 end
-simpson = (h/3)*(f(a)+sum1+f(b));
+simpson = (h/3)*(f(a)+sum1+f(b));c
 disp(simpson);
